@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ADI SANJIBANI DIAGNOSTIC CENTRE</title>
+<meta name="description" content="ADI SANJIBANI - Trusted care for over 30 years. Digital X-Ray, Pathology, Ultrasound (USG), Doctor's Chamber." />
+<style>
+  :root{
+    --bg:#f7fbff; --card:#ffffff; --muted:#696969;
+    --blue-600:#0b6cf0; --blue-500:#1680ff; --accent:#dbeeff;
+    --radius:12px; --max-width:1100px; --gap:18px;
+    --shadow: 0 8px 30px rgba(9,30,66,0.06);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:#80c488;line-height:1.45}
+  .wrap{max-width:var(--max-width);margin:0 auto;padding:24px}
+  header{background:#fff;border-radius:12px;padding:12px 20px;margin-bottom:18px;box-shadow:var(--shadow);position:sticky;top:14px;z-index:40}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{display:flex;gap:12px;align-items:center}
+  .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--blue-600),var(--blue-500));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
+  nav a{margin-left:14px;text-decoration:none;color:var(--muted);font-weight:600}
+  .cta{background:var(--blue-600);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+  /* HERO */
+  .hero{display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:center;margin-bottom:18px}
+  .hero-card{background:linear-gradient(180deg, rgba(11,108,240,0.06), rgba(255,255,255,0.0));padding:28px;border-radius:16px;box-shadow:var(--shadow)}
+  .eyebrow{color:var(--blue-600);font-weight:700;letter-spacing:1px}
+  h1{margin:8px 0;font-size:28px}
+  p.lead{color:var(--muted);margin:0 0 16px}
+  .hero-actions{display:flex;gap:12px}
+  /* Right column preview / animated video cards */
+  .preview-grid{display:grid;gap:12px}
+  .anim-card{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 6px 20px rgba(9,30,66,0.04);display:flex;align-items:center;gap:12px}
+  .anim-card h4{margin:0;font-size:14px}
+  .muted{color:var(--muted)}
+  /* SECTIONS */
+  section{margin-bottom:20px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
+  .fac-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+  .fac{background:linear-gradient(180deg,#fff,#f7fbff);padding:14px;border-radius:10px;display:flex;gap:12px;align-items:flex-start}
+  .fac .icon{width:56px;height:56px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--blue-600)}
+  .fac h5{margin:0;font-size:16px}
+  .fac small{color:var(--muted)}
+  /* Gallery */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .gallery img{width:100%;height:160px;object-fit:cover;border-radius:8px;display:block}
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  iframe{width:100%;height:280px;border-radius:10px;border:0}
+  /* Footer */
+  footer{padding:18px;text-align:center;color:var(--muted)}
+  /* Responsive */
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr;gap:14px}
+    .fac-grid{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr)}
+    .contact-grid{grid-template-columns:1fr}
+  }
+
+  /* --- Lightweight animation utilities --- */
+  .pulse { animation: pulse 2s infinite ease-in-out; }
+  @keyframes pulse { 0% { transform: scale(1); opacity:1 } 50% { transform: scale(1.03); opacity:0.92 } 100% { transform: scale(1); opacity:1 } }
+
+  .scan-line { animation: scan 2.2s linear infinite; }
+  @keyframes scan { 0% { transform: translateY(-110%); } 100% { transform: translateY(110%); } }
+
+  .wave { animation: wave 1.6s ease-in-out infinite; transform-origin:center; }
+  @keyframes wave { 0%{ transform: scale(1); opacity:0.9 } 50%{ transform: scale(1.06); opacity:0.6 } 100%{ transform: scale(1); opacity:0.9 } }
+
+  /* subtle reveal */
+  .reveal { opacity:0; transform:translateY(10px); animation:reveal 0.7s ease forwards; }
+  .reveal.delay-1{ animation-delay:0.06s } .reveal.delay-2{ animation-delay:0.12s }
+  .reveal.delay-3{ animation-delay:0.18s }
+  @keyframes reveal { to { opacity:1; transform:none } }
+  /* small helpers */
+  .center {display:flex;align-items:center;justify-content:center}
+  .small {font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- HEADER -->
+    <header>
+      <div class="nav">
+        <div class="brand">
+          <div class="logo" aria-hidden>AS</div>
+          <div>
+            <div style="font-weight:800">ADI SANJIBANI</div>
+            <div class="small">Diagnostic Centre</div>
+          </div>
+        </div>
+
+        <nav class="center">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#facilities">Facilities</a>
+          <a href="#why">Why</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+          &nbsp;<a class="cta" href="#contact">Book Test</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero reveal delay-1">
+      <div class="hero-card">
+        <div class="eyebrow">Trusted Diagnostics</div>
+        <h1>ADI SANJIBANI DIAGNOSTIC CENTRE</h1>
+        <p class="lead">Trusted Care for Over <strong>30 Years</strong> — Accurate, Compassionate, Modern diagnostics for you and your family.</p>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="cta" href="#facilities">Our Facilities</a>
+          <a href="#contact" style="padding:10px 14px;border-radius:10px;background:#fff;border:1px solid rgba(11,108,240,0.08);text-decoration:none;font-weight:700;color:var(--blue-600)">Contact Us</a>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <div class="card small" style="display:flex;gap:10px;align-items:center">
+            <div style="width:48px;height:48px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:var(--blue-600)">30+</div>
+            <div>
+              <div style="font-weight:700">30+ Years</div>
+              <div class="small muted">Experience in medical diagnostics</div>
+            </div>
+          </div>
+
+          <div class="card small" style="display:flex;gap:10px;align-items:center">
+            <div style="width:48px;height:48px;border-radius:8px;background:linear-gradient(90deg,#e9f4ff,#f7fbff);display:flex;align-items:center;justify-content:center;color:var(--blue-600)">✓</div>
+            <div>
+              <div style="font-weight:700">Trusted Team</div>
+              <div class="small muted">Skilled, dedicated employees</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: animated previews (these are self-contained SVG/CSS animations) -->
+      <aside class="preview-grid">
+        <!-- Animated X-Ray (SVG scan-line animation) -->
+        <div class="anim-card reveal delay-2">
+          <div style="width:88px">
+            <svg viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border-radius:8px;overflow:hidden">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1">
+                  <stop offset="0" stop-color="#eaf4ff"/>
+                  <stop offset="1" stop-color="#ffffff"/>
+                </linearGradient>
+                <clipPath id="frame"><rect x="6" y="6" width="208" height="128" rx="8" /></clipPath>
+              </defs>
+              <rect x="6" y="6" width="208" height="128" rx="8" fill="url(#g1)" stroke="#dbeeff" />
+              <!-- bones shapes -->
+              <g clip-path="url(#frame)" transform="translate(20,14)">
+                <rect x="0" y="0" width="180" height="96" rx="6" fill="#fff" />
+                <g fill="#c6e0ff" opacity="0.9">
+                  <rect x="12" y="18" width="18" height="60" rx="6" />
+                  <rect x="42" y="12" width="18" height="72" rx="6" />
+                  <rect x="72" y="8" width="18" height="80" rx="6" />
+                  <rect x="102" y="12" width="18" height="72" rx="6" />
+                  <rect x="132" y="18" width="18" height="60" rx="6" />
+                </g>
+
+                <!-- scan overlay -->
+                <g class="scan-line" style="mix-blend-mode:screen">
+                  <rect x="-30" y="-120" width="240" height="40" fill="rgba(11,108,240,0.14)" transform="rotate(-2)"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div>
+            <h4 style="margin-bottom:6px">Digital X-Ray</h4>
+            <div class="small muted">Fast, high-resolution scans</div>
+          </div>
+        </div>
+
+        <!-- Animated Ultrasound (waves expanding) -->
+        <div class="anim-card reveal delay-3">
+          <div style="width:88px">
+            <svg viewBox="0 0 140 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+              <rect x="6" y="6" width="128" height="108" rx="10" fill="#fff" stroke="#dbeeff"/>
+              <g transform="translate(70,60)">
+                <g>
+                  <circle r="18" fill="#eaf4ff"/>
+                  <circle r="12" fill="#dbeeff" class="wave" />
+                </g>
+                <g>
+                  <path d="M-28 0 Q-10 -10 0 -2 Q10 6 28 0" stroke="#cfe8ff" stroke-width="3" fill="none" class="wave" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div>
+            <h4 style="margin-bottom:6px">Ultrasound (USG)</h4>
+            <div class="small muted">Clear imaging by expert sonographers</div>
+          </div>
+        </div>
+
+        <!-- Animated Pathology (moving cells) -->
+        <div class="anim-card reveal delay-2">
+          <div style="width:88px">
+            <svg viewBox="0 0 140 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+              <rect x="6" y="6" width="128" height="108" rx="10" fill="#fff" stroke="#dbeeff"/>
+              <g transform="translate(20,20)">
+                <circle cx="18" cy="18" r="10" fill="#cfe8ff" class="pulse"/>
+                <circle cx="58" cy="40" r="8" fill="#e6f0ff"/>
+                <circle cx="98" cy="20" r="9" fill="#dbeeff" class="pulse"/>
+              </g>
+            </svg>
+          </div>
+          <div>
+            <h4 style="margin-bottom:6px">Pathology Lab</h4>
+            <div class="small muted">QA-driven tests — hematology, biochem, microbiology</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="grid reveal delay-1">
+      <div class="card">
+        <h3>About Us</h3>
+        <p class="small muted">ADI SANJIBANI DIAGNOSTIC CENTRE has been serving the community for more than thirty years. Founded with a commitment to accurate diagnostics and patient-first care, we combine modern equipment, strict quality processes, and a deeply experienced team to support physicians and patients alike.</p>
+        <ul style="margin-top:12px;color:var(--muted);font-weight:600">
+          <li style="margin:6px 0">• History: Long-standing track record of reliability and trust</li>
+          <li style="margin:6px 0">• Mission: Accurate diagnostics delivered with compassion and speed</li>
+          <li style="margin:6px 0">• Team: Skilled technologists and dedicated staff — 30+ years cumulative experience</li>
+        </ul>
+      </div>
+
+      <div class="card center">
+        <!-- animated team illustration -->
+        <!-- animated team illustration -->
+<div style="width:100%">
+  <svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+    <defs>
+      <linearGradient id="g2" x1="0" x2="1">
+        <stop offset="0" stop-color="#eaf4ff"/>
+        <stop offset="1" stop-color="#fff"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Background Card -->
+    <rect rx="14" width="100%" height="100%" fill="url(#g2)"/>
+
+    <!-- THREE AVATARS INSERTED -->
+    <foreignObject x="40" y="40" width="100" height="120">
+      <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png" 
+           width="90" height="90" style="border-radius:50%;"/>
+    </foreignObject>
+
+    <foreignObject x="230" y="40" width="100" height="120">
+      <img src="https://cdn-icons-png.flaticon.com/512/4202/4202849.png" 
+           width="90" height="90" style="border-radius:50%;"/>
+    </foreignObject>
+
+    <foreignObject x="410" y="40" width="100" height="120">
+      <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png"width="90" height="90" style="border-radius:50%;">
+    </foreignObject>
+
+    <!-- Text Below -->
+    <text x="24" y="210" fill="#0b6cf0" font-size="18" font-weight="700">
+      Skilled & dedicated employees
+    </text>
+    <text x="24" y="236" fill="#536874" font-size="13">
+      One of the best teams in the region, focused on accuracy & patient care
+    </text>
+
+  </svg>
+</div>
+
+    </section>
+
+    <!-- FACILITIES -->
+<section id="facilities" class="reveal delay-2">
+  <h2>Our Facilities</h2>
+  <p class="small muted">We provide modern and reliable diagnostic services with expert staff.</p>
+
+  <div class="facility-container">
+
+      <div class="facility-card">
+          <h3>X-Ray</h3>
+          <p>High-quality digital X-Ray with accurate diagnosis.</p>
+      </div>
+
+      <div class="facility-card">
+          <h3>Pathology</h3>
+          <p>Fully automated lab with expert technicians.</p>
+      </div>
+
+      <div class="facility-card">
+          <h3>Ultrasound</h3>
+          <p>Advanced ultrasound scanning for precise reports.</p>
+      </div>
+
+      <!-- UPDATED DOCTOR CHAMBER CARD WITH DESCRIPTION -->
+      <!-- DOCTOR'S CHAMBER CARD -->
+<div class="facility-card">
+    <h3>Doctor's Chamber</h3>
+
+    <div style="max-height:250px; overflow-y:auto; padding-right:6px;">
+
+        <p><strong>Neuropsychiatrist & Child Specialist</strong><br>
+        Dr. Narottam Halder<br>
+        MBBS, DCM, MD<br>
+        Currently at Ranaghat Hospital<br>
+        <em>Time: Every Saturday from 4 PM</em></p>
+
+        <p><strong>Chest & Medicine Specialist</strong><br>
+        Dr. Kohena Roy<br>
+        MBBS, MD Medicine<br>
+        N.R.S. Medical College & Hospital<br>
+        Asthma, TB, BP, sugar, thyroid, chronic cough etc.<br>
+        <em>Time: Every Thursday from 12:30 PM</em></p>
+
+        <p><strong>Orthopedic Surgeon</strong><br>
+        Dr. Abhay Sarkar<br>
+        MBBS, MS Ortho<br>
+        S.S.K.M. Medical College Hospital<br>
+        <em>Time: Monday 11 AM & Saturday 2 PM</em></p>
+
+        <p><strong>General & Medicine Specialist</strong><br>
+        Dr. Saikat Sen<br>
+        MBBS<br>
+        Former E.M.S. Hospital<br>
+        <em>Time: Sun–Thu & Sat from 6 PM</em></p>
+
+        <p><strong>Dermatology & Venereal Disease Specialist</strong><br>
+        Dr. Aniruddha Chakraborty<br>
+        MBBS, MD (DVL)<br>
+        Ranaghat Hospital<br>
+        <em>Time: Every Thursday from 12 PM</em></p>
+
+        <p><strong>Gynecologist & Obstetrician</strong><br>
+        Dr. Gael Karmakar<br>
+        MBBS, MS, DNB OBS (Gynae)<br>
+        Kolkata Medical College<br>
+        <em>Time: Every Friday from 12 PM</em></p>
+
+        <p><strong>Neurologist Surgeon</strong><br>
+        Dr. Gomit Amit Kumar<br>
+        MBBS, MS, MCh<br>
+        N.R.S. Medical College & Hospital<br>
+        <em>Time: 2nd & 4th Saturday from 3 PM</em></p>
+
+        <p><strong>Orthopedic Surgeon</strong><br>
+        Dr. Sunetra Roy<br>
+        MBBS, D Ortho, DNB Ortho<br>
+        J.N.M. Hospital Kalyani<br>
+        <em>Time: Every Thursday from 4 PM</em></p>
+
+        <p><strong>Heart, Chest, Sugar & Thyroid Specialist</strong><br>
+        Dr. Arijit Biswas<br>
+        MBBS, MD<br>
+        R.G. Kar Medical College<br>
+        <em>Time: Every Tuesday from 12 PM</em></p>
+
+        <p><strong>ENT Specialist</strong><br>
+        Dr. Purita Mitra<br>
+        MBBS, MS ENT<br>
+        Krishnanagar Sadar Hospital<br>
+        <em>Time: Every Wednesday from 3:30 PM</em></p>
+
+        <p><strong>Neuropsychiatrist</strong><br>
+        Dr. Shubham Chatterjee<br>
+        MBBS, MD (Neuro Psychiatrist)<br>
+        S.S.K.M. PG Hospital<br>
+        <em>Time: Every Friday from 12 PM</em></p>
+
+    </div>
+
+    <p style="font-size:12px; color:#777; margin-top:8px;">
+        *Scroll inside the card to see all doctors.
+    </p>
+</div>
+
+</section>
+
+
+
+    <!-- WHY CHOOSE US -->
+    <section id="why" class="grid reveal delay-3">
+      <div class="card">
+        <h3>Why Choose Us</h3>
+        <p class="small muted">We combine decades of experience with modern equipment, strict QA and compassionate patient care.</p>
+        <ul style="margin-top:12px;color:var(--muted);font-weight:600">
+          <li style="margin:6px 0">• 30+ years experience — consistent quality & community trust</li>
+          <li style="margin:6px 0">• Accuracy — trained technologists and QA protocols</li>
+          <li style="margin:6px 0">• Modern equipment — digital X-ray, up-to-date ultrasound systems</li>
+          <li style="margin:6px 0">• Patient-first care — respectful, fast and clear communication</li>
+        </ul>
+      </div>
+
+      <div class="card center">
+        <!-- small "video-like" animation: rotating equipment -->
+        <svg viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+          <rect rx="12" width="100%" height="100%" fill="#fff"/>
+          <g transform="translate(20,18)">
+            <g transform="translate(20,20)">
+              <rect x="0" y="0" width="200" height="120" rx="8" fill="#f7fbff" stroke="#e1f0ff"/>
+              <g transform="translate(30,18)">
+                <rect width="40" height="60" rx="6" fill="#dbeeff" class="wave"/>
+                <rect x="60" width="40" height="60" rx="6" fill="#cfe8ff" class="wave" style="animation-delay:.1s"/>
+                <rect x="120" width="40" height="60" rx="6" fill="#e6f3ff" class="wave" style="animation-delay:.2s"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="reveal delay-1">
+      <h3>Gallery</h3>
+      <p class="small muted">Photos of our centre and machines. Replace these placeholders with your real images for best result.</p>
+
+      <div class="card gallery" style="margin-top:12px">
+        <!-- placeholder images (Unsplash-like URLs — replace with your own images) -->
+        <img src="photo_2025-11-17_19-05-04.jpg" alt="gallery1"/>
+        <img src="photo_2025-11-17_19-05-25.jpg" alt="gallery2"/>
+        <img src="photo_2025-11-17_19-05-28.jpg" alt="gallery3"/>
+        <img src="photo_2025-11-17_19-05-07.jpg" alt="gallery4"/>
+        <img src="photo_2025-11-17_19-05-31.jpg" alt="gallery5"/>
+        <img src="photo_2025-11-17_19-05-18.jpg" alt="gallery6"/>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal delay-2">
+      <h3>Contact Us</h3>
+      <p class="small muted">Address, phone, email and a map. Replace the placeholders with your real contact details and Google Maps embed.</p>
+
+      <div class="contact-grid" style="margin-top:12px">
+        <div class="card">
+          <p><strong>Address</strong><br><span class="muted"> Chakdaha - Bongaon Rd, Gopalnagar, Khamarkalla, West Bengal 743262</span></p>
+          <p style="margin-top:10px"><strong>Phone</strong><br><span class="muted">+91 9932987790 / +91 7865026668</span></p>
+          <p style="margin-top:10px"><strong>Email</strong><br><span class="muted">proloyroy619@gmail.com</span></p>
+
+          <form style="margin-top:12px;display:grid;gap:10px">
+            <input placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid #eaf4ff" />
+            <input placeholder="Phone or email" style="padding:10px;border-radius:8px;border:1px solid #eaf4ff" />
+            <textarea placeholder="Message" rows="4" style="padding:10px;border-radius:8px;border:1px solid #eaf4ff"></textarea>
+            <button type="button" style="background:var(--blue-600);color:#fff;padding:10px;border-radius:10px;border:0;font-weight:700">Send Message</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="small muted" style="margin-bottom:8px"><a href="https://maps.app.goo.gl/MpUkPc4uQSioHK669">Find us on the map</a></div>
+          <iframe src="https://maps.app.goo.gl/MpUkPc4uQSioHK669" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer style="margin-top:10px">
+      <div class="small muted">ADI SANJIBANI DIAGNOSTIC CENTRE — Trusted Care for Over 30 Years • © <span id="year"></span></div>
+    </footer>
+  </div>
+
+<script>
+  // small bootstraps
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Optional: scroll-to behavior for anchor clicks
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      const id = a.getAttribute('href').slice(1);
+      if(!id) return;
+      const el = document.getElementById(id);
+      if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+    });
+  });
+</script>
+</body>
+</html>
+
+ 
+
